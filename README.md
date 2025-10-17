@@ -1,43 +1,68 @@
-# Number Plate Recognition System
+# 🚗 Number Plate Recognition System
 
-This is a small Flask-based number plate recognition project. It allows uploading a vehicle image, detects the number plate, and returns the cropped plate image along with the recognized text.
+A simple, lightweight Flask web app that detects vehicle number plates using OpenCV, crops the plate region, and extracts the plate text using Tesseract OCR.
 
-Below is an example using the sample image `google_images/133.jpeg` and the corresponding detected result `static/results/133_plate.jpg`.
+Below is an example using the sample image `google_images/133.jpeg` and its detected result `static/results/133_plate.jpg`.
 
+---
 
-![Original ](https://github.com/user-attachments/assets/289e4fe7-516e-48dc-b1bd-afa6189ffe6e)
+## 🖼️ Original Vehicle Image
 
-![Detected plate](https://github.com/user-attachments/assets/d8564d26-7141-43b4-88be-0c39e9f96495)
+![Original Vehicle Image](google_images/133.jpeg)
 
+## 🏷️ Detected Number Plate
 
-How to run
+![Detected Number Plate](static/results/133_plate.jpg)
 
-1. Create a virtual environment and install dependencies (if any). This project is a simple Flask app — make sure Flask is installed.
+---
 
-   ```bash
-   python -m venv venv
-   source venv/Scripts/activate    # on Windows (PowerShell: venv\Scripts\Activate.ps1)
-   pip install -r requirements.txt  # if you have one, otherwise: pip install flask
-   ```
+## ⚡ How to run
 
-2. Start the app:
+1. Create a virtual environment and install dependencies
 
-   ```bash
-   python app.py
-   ```
+```bash
+python -m venv venv
+# Activate the environment
+# Windows (cmd): venv\Scripts\activate
+# Windows (PowerShell): venv\Scripts\Activate.ps1
+# macOS / Linux: source venv/bin/activate
+pip install -r requirements.txt
+```
 
-3. Open the site (usually http://127.0.0.1:5000/) to upload images and see recognition results.
+2. Start the Flask app
 
-Notes
+```bash
+python app.py
+```
 
-- The README references the sample files by relative paths. If you move files, update the paths accordingly.
-- If you want the README images to show on GitHub, ensure the `google_images/133.jpeg` and `static/results/133_plate.jpg` files are committed to the repository.
+3. Open the site
 
-Tesseract OCR
+Visit `http://127.0.0.1:5000/` in your browser, upload an image, and see the recognition results.
 
-- This project uses Tesseract OCR (the Python package `pytesseract` is a wrapper).
-- On Windows, you can download a prebuilt Tesseract installer from the UB Mannheim builds:
+---
+
+## 🛠️ Tesseract OCR
+
+This project uses Tesseract OCR via the Python wrapper `pytesseract`. You must install the Tesseract engine separately on your system.
+
+- Windows (recommended build):
 
   https://github.com/UB-Mannheim/tesseract/wiki
 
-  After installing, ensure `tesseract.exe` is available and update the path in `detect.py` if necessary.
+- After installing, ensure `tesseract.exe` is on your PATH or update the path in `detect.py`:
+
+```python
+# Example (Windows):
+pytesseract.pytesseract.tesseract_cmd = r'C:\Program Files\Tesseract-OCR\tesseract.exe'
+```
+
+---
+
+## Notes
+
+- The README references local images by relative paths — keep `google_images/133.jpeg` and `static/results/133_plate.jpg` in the repository if you want them to display on GitHub.
+- If you need GPU accelerated OpenCV or a specific build, adjust `requirements.txt` accordingly.
+
+---
+
+If you'd like I can also add a "Features & Screenshots" section with badges, or produce a single-line repo description suitable for GitHub's short description field.
