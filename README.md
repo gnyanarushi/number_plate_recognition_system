@@ -64,5 +64,3 @@ pytesseract.pytesseract.tesseract_cmd = r'C:\Program Files\Tesseract-OCR\tessera
 - If you need GPU accelerated OpenCV or a specific build, adjust `requirements.txt` accordingly.
 
 ---
-
-If you'd like I can also add a "Features & Screenshots" section with badges, or produce a single-line repo description suitable for GitHub's short description field.
