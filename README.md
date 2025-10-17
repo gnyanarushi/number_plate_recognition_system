@@ -4,10 +4,10 @@ This is a small Flask-based number plate recognition project. It allows uploadin
 
 Below is an example using the sample image `google_images/133.jpeg` and the corresponding detected result `static/results/133_plate.jpg`.
 
-#Original image
+##Original image
 ![Original ](https://github.com/user-attachments/assets/a1c81b33-d3bf-4bdb-9ded-86046735115b)
 
-#Result image
+##Result image
 ![Detected plate](https://github.com/user-attachments/assets/78e485b5-3963-46c3-865a-3ea526df8f13)
 
 
