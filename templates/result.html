@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Result</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+  <div class="site-wrapper">
+    <div class="container">
+      <h2>Detected Number Plate</h2>
+
+      <div class="result">
+        <div class="image-col">
+          {% if plate_image %}
+            <img src="{{ url_for('static', filename='results/' + plate_image) }}" alt="Detected plate">
+          {% else %}
+            <p class="muted">No image available</p>
+          {% endif %}
+        </div>
+
+        <div class="meta">
+          <h3 class="muted">Recognized Text</h3>
+          <div class="plate-text">{{ text }}</div>
+
+          <!-- intentionally not showing the original uploaded filename to keep the result focused -->
+
+          <div class="actions">
+            <a class="btn secondary" href="/">New Upload</a>
+            <a class="btn" href="{{ url_for('static', filename='results/' + plate_image) }}" download>Download Result</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+</html>

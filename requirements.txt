@@ -1,0 +1,9 @@
+flask>=2.0
+opencv-python>=4.5.5.64
+pytesseract>=0.3.10
+numpy>=1.21
+
+# Notes:
+# - This project requires the Tesseract OCR engine installed separately on your system.
+#   On Windows install from: https://github.com/tesseract-ocr/tesseract/releases
+# - If you need GPU-accelerated OpenCV builds or specific platform builds, adjust opencv package accordingly.

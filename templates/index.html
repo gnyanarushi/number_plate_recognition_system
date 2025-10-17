@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Number Plate Recognition</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+  <div class="site-wrapper">
+    <div class="container">
+      <h1>Number Plate Recognition</h1>
+      <p class="muted">Upload a clear photo of the vehicle and our model will detect and recognize the number plate.</p>
+
+      <form class="upload-form" method="POST" action="/upload" enctype="multipart/form-data">
+        <label class="file-input file-label" for="file-upload">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path d="M12 16V4" stroke="#2563eb" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><path d="M8 8l4-4 4 4" stroke="#2563eb" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          Choose image
+          <input id="file-upload" type="file" name="file" accept="image/*" required>
+        </label>
+
+        <button class="btn" type="submit">Upload & Detect</button>
+      </form>
+      <!-- Preview area -->
+      <div class="preview" id="preview-area" aria-live="polite">
+        <p class="muted" id="file-name">No file chosen</p>
+        <img id="preview-img" alt="Selected image preview" style="display:none">
+      </div>
+      <script src="{{ url_for('static', filename='preview.js') }}"></script>
+    </div>
+  </div>
+</body>
+</html>
